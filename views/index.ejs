@@ -1,3 +1,83 @@
-<h1>Marco Quintero</h1>
+<!-- <h1>Marco Quintero</h1> -->
+<!DOCTYPE html>
+<html lang="en"> 
+
+   <!--  <%- include('partials/head') %>  -->
+
+<body>
+    <main style="background-image: url('/images/site/checkerboard.jpg');">
 
         
+
+        <div class="container">
+        
+                <!-- Include the header partial -->
+            <header>
+                <%- include('partials/header') %>
+            </header>
+            
+            <!-- Include the navigation partial -->
+            <nav>
+                <%- include('partials/navigation') %>
+            </nav>
+            
+            <section class="welcome-section">
+                <h1 class="welcome-tilte">Welcome to CSE Motors!</h1>
+            </section>
+
+            <section class="featured-car">
+                <img src="/images/vehicles/delorean.jpg" alt="DMC Delorean" class="car-image"/>
+                <div class="car-info">
+                    <h2><bold>DMC Delorean<bold></h2>
+                    <ul>
+                        <li>3 Cup holders</li>
+                        <li>Superman doors</li>
+                        <li>Fuzzy dice!</li>
+                    </ul>
+                    <img src="/images/site/own_today.png" alt="Own Today Button" class="own-today"/>
+                    <!-- <p>3 Cup holders</p>
+                    <p>Superman doors</p>
+                    <p>Fuzzy dice!</p>
+                    <img src="/images/site/own_today.png" alt="Own Today Button" class="own-today"/> -->
+                </div>
+            </section>
+
+            <section class="upgrades-reviews-container"> 
+                <div class="upgrades">
+                    <h3 class="title-upgrades">Delorean Upgrades</h3>
+                    <div class="upgrade-group-items">
+                        <div class="upgrade-item">
+                            <img src="/images/upgrades/flux-cap.png" alt="Flux Capacitor" class="upgrade-image"/>
+                            <p style="margin-top: 20px;">Flux Capacitor</p>
+                        </div>
+                        <div class="upgrade-item">
+                            <img src="/images/upgrades/flame.jpg" alt="Flame Decals" class="upgrade-image"/>
+                            <p>Flame Decals</p>
+                        </div>
+                        <div class="upgrade-item">
+                            <img src="/images/upgrades/bumper_sticker.jpg" alt="Bumper Stickers" class="upgrade-image"/>
+                            <p style="margin-top: 30px;">Bumper Stickers</p>
+                        </div>
+                        <div class="upgrade-item">
+                            <img src="/images/upgrades/hub-cap.jpg" alt="Hub Caps" class="upgrade-image"/>
+                            <p style="margin-top: 20px;">Hub Caps</p>
+                        </div>
+                    </div>
+                </div>
+            
+                <section class="reviews">
+                    <h3 class="reviews-title">DMC Delorean Reviews</h3>
+                    <ul class="reviews-list">
+                        <li>“So fast it's almost like traveling in time.” (4/5)</li>
+                        <li>“Coolest ride on the road.” (4/5)</li>
+                        <li>“I'm feeling McFly!” (5/5)</li>
+                        <li>“The most futuristic ride of our day.” (4.5/5)</li>
+                        <li>“80's livin and I love it!” (5/5)</li>
+                    </ul>
+                </section>
+            </section>
+            <%- include('partials/footer') %>
+        </div> 
+    </main>
+</body>
+</html>
