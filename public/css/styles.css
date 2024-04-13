@@ -12,7 +12,7 @@ body {
   background-image: url('/images/site/checkerboard.jpg');
 }
 
-main {
+.background-page {
   color: #fff;
   max-width: 1200px;
   margin: 0 auto;
@@ -43,9 +43,9 @@ h1 {
   font-size: 2rem;
 }
 
-h2 {
+/* h2 {
   color: #2BB5D5;
-}
+} */
 
 div.car-info p, li {
   color:#2BB5D5;
@@ -84,6 +84,10 @@ header a {
   text-decoration: none; 
 }
 
+.title-dmc{
+  font: bold;
+  color: #2BB5D5;
+}
 
 nav {
   background-color: #131313; /* For header, nav, and footer */
@@ -109,7 +113,7 @@ nav li {
   position: relative;
 }
 
-.welcome-section h1 {
+.welcome-section h2 {
   text-align:left;
   margin-bottom: 20px;
   color: #000;
@@ -324,9 +328,10 @@ footer .copyright{
       box-sizing: border-box;
     }
 
-    .welcome-tilte{
+    .welcome-title{
       padding-top: 20px;
       text-align: center;
+      font: bold;
     }
 
     .car-info {
@@ -342,7 +347,7 @@ footer .copyright{
     }
 
     .copyright {
-      margin: 15px, 0px, 10px, 0px;
+      margin: 15px 0px 10px 0px;
     }
 
 }

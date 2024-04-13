@@ -1,44 +1,27 @@
 <!-- <h1>Marco Quintero</h1> -->
-<!DOCTYPE html>
-<html lang="en"> 
-
-   <!--  <%- include('partials/head') %>  -->
-
-<body>
-    <main style="background-image: url('/images/site/checkerboard.jpg');">
-
-        
+    <section class="background-page" style="background-image: url('/images/site/checkerboard.jpg');">
 
         <div class="container">
         
-                <!-- Include the header partial -->
-            <header>
-                <%- include('partials/header') %>
-            </header>
-            
-            <!-- Include the navigation partial -->
-            <nav>
-                <%- include('partials/navigation') %>
-            </nav>
+            <%- include('partials/header') %>
+        
+            <%- include('partials/navigation') %>
             
             <section class="welcome-section">
-                <h1 class="welcome-tilte">Welcome to CSE Motors!</h1>
+                <h2 class="welcome-title">Welcome to CSE Motors!</h2>
             </section>
 
             <section class="featured-car">
-                <img src="/images/vehicles/delorean.jpg" alt="DMC Delorean" class="car-image"/>
+                <img src="/images/vehicles/delorean.jpg" alt="DMC Delorean" class="car-image">
                 <div class="car-info">
-                    <h2><bold>DMC Delorean<bold></h2>
+                    <h2 class="title-dmc">DMC Delorean</h2>
                     <ul>
                         <li>3 Cup holders</li>
                         <li>Superman doors</li>
                         <li>Fuzzy dice!</li>
                     </ul>
-                    <img src="/images/site/own_today.png" alt="Own Today Button" class="own-today"/>
-                    <!-- <p>3 Cup holders</p>
-                    <p>Superman doors</p>
-                    <p>Fuzzy dice!</p>
-                    <img src="/images/site/own_today.png" alt="Own Today Button" class="own-today"/> -->
+                    <img src="/images/site/own_today.png" alt="Own Today Button" class="own-today">
+
                 </div>
             </section>
 
@@ -47,19 +30,19 @@
                     <h3 class="title-upgrades">Delorean Upgrades</h3>
                     <div class="upgrade-group-items">
                         <div class="upgrade-item">
-                            <img src="/images/upgrades/flux-cap.png" alt="Flux Capacitor" class="upgrade-image"/>
+                            <img src="/images/upgrades/flux-cap.png" alt="Flux Capacitor" class="upgrade-image">
                             <p style="margin-top: 20px;">Flux Capacitor</p>
                         </div>
                         <div class="upgrade-item">
-                            <img src="/images/upgrades/flame.jpg" alt="Flame Decals" class="upgrade-image"/>
+                            <img src="/images/upgrades/flame.jpg" alt="Flame Decals" class="upgrade-image">
                             <p>Flame Decals</p>
                         </div>
                         <div class="upgrade-item">
-                            <img src="/images/upgrades/bumper_sticker.jpg" alt="Bumper Stickers" class="upgrade-image"/>
+                            <img src="/images/upgrades/bumper_sticker.jpg" alt="Bumper Stickers" class="upgrade-image">
                             <p style="margin-top: 30px;">Bumper Stickers</p>
                         </div>
                         <div class="upgrade-item">
-                            <img src="/images/upgrades/hub-cap.jpg" alt="Hub Caps" class="upgrade-image"/>
+                            <img src="/images/upgrades/hub-cap.jpg" alt="Hub Caps" class="upgrade-image">
                             <p style="margin-top: 20px;">Hub Caps</p>
                         </div>
                     </div>
@@ -78,6 +61,5 @@
             </section>
             <%- include('partials/footer') %>
         </div> 
-    </main>
-</body>
+    </section>
 </html>
