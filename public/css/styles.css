@@ -104,6 +104,9 @@ nav li {
   padding: 10px;
   color: #fff; /*  white text for nav links */
 }
+.navbar li a{
+  color: #ffffff;
+}
 
 .container {
   background-color: white;
