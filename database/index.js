@@ -3,9 +3,9 @@ require("dotenv").config()
 
 /* ***************
  * Connection Pool
- * Objeto SSL necesario para probar localmente la aplicación
- * Pero causará problemas en un entorno de producción
- * If - else determinará cuál usar
+ * SSL Object needed for local testing of app
+ * But will cause problems in production environment
+ * If - else will make determination which to use
  * *************** */
 let pool
 if (process.env.NODE_ENV == "development") {
@@ -16,16 +16,16 @@ if (process.env.NODE_ENV == "development") {
     },
   })
 
-  // Agregado para depurar consultas
-  // durante el desarrollo
+  // Added for troubleshooting queries
+// during development
   module.exports = {
     async query(text, params) {
       try {
         const res = await pool.query(text, params)
-        console.log("consulta ejecutada", { text })
+        console.log("executed query", { text })
         return res
       } catch (error) {
-        console.error("error en la consulta", { text })
+        console.error("error in query", { text })
         throw error
       }
     },

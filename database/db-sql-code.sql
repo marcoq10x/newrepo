@@ -2,7 +2,7 @@ CREATE TYPE public.account_type AS ENUM
     ('Client', 'Employee', 'Admin');
 
 ALTER TYPE public.account_type
-    OWNER TO cse340;
+    OWNER TO cse340db1;
 
 
     -- Table structure for table 'classification'
@@ -61,12 +61,13 @@ VALUES ('Custom'),
 
 
   SELECT * FROM public.inventory
-ORDER BY inv_id ASC 
+ORDER BY inv_id ASC;
 
 
-UPDATE inventory
-SET description = REPLACE(description, 'small interiors', 'a huge interior')
-WHERE inv_name = 'GM Hummer';
+UPDATE
+  public.inventory
+SET
+  inv_description = REPLACE(inv_description, 'the small interiors', 'a huge interior');
 
  
 UPDATE inventory
