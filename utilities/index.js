@@ -7,7 +7,6 @@ const Util = {}
 Util.getNav = async function (req, res, next) {
   try{
   let data = await invModel.getClassifications()
-  console.log(data);
   let list = "<ul>"
   list += '<li><a href="/" title="Home page">Home</a></li>'
   data.rows.forEach((row) => {
@@ -31,7 +30,7 @@ Util.getNav = async function (req, res, next) {
 };
 
 /* **************************************
- * Construir la vista de clasificación HTML
+* Build the classification view HTML
  * ************************************ */
 Util.buildClassificationGrid = async function(data){
   let grid
@@ -63,8 +62,29 @@ Util.buildClassificationGrid = async function(data){
   return grid
 }
 
+/* **************************************
+* Build the classification view HTML
+ * ************************************ */
+Util.vehicledetailGrid = async function(data){
+  const datastring = JSON.stringify(data)
+  let grid
+  if(datastring.length > 0){
+    const vehicle = data
+grid='<div>' + vehicle.inv_make + '</div>'
 
 
+
+  }
+  return grid
+  }
+
+
+/* ****************************************
+ * Middleware For Handling Errors
+ * Wrap other function in this for 
+ * General Error Handling
+ **************************************** */
+Util.handleErrors = fn => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next)
 
 
 module.exports = Util

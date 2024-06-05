@@ -1,0 +1,25 @@
+
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="background-page">
+    <%- include('../partials/header') %>
+    <%- include('../partials/navigation') %>
+
+    <!-- Main Content Heading -->
+    <div class="container">
+        <% if (title) { %>
+            <h1 class="error-title"><%= title %></h1>
+        <% } else { %>
+            <h1 class="error-title">Error</h1>
+        <% } %>
+
+        <!-- Message Block -->
+        <p class="error-message"><%- message %></p>
+
+     
+
+    <%- include('../partials/footer') %>
+</body>
+</html>
+

@@ -15,6 +15,8 @@ const inventoryRoute  = require("./routes/inventoryRoute")
 //Module 2
 const baseController = require("./controllers/baseController")
 
+// Add the utilities require statement here
+const utilities = require("./utilities")
 
 /* ***********************
  * View Engine and Templates
@@ -27,17 +29,31 @@ app.set("layout", "./layouts/layout") // not at views root
  * Routes
  *************************/
 app.use(static)
+//Index route-Unit 3, activity
+app.get("/", utilities.handleErrors(baseController.buildHome))
+//Inventory Routes - Unit 3, activity
+app.use("/inv", inventoryRoute)
 
-//Index route
-app.get("/", baseController.buildHome)
 
-//Inventory Routes
-app.use("/inv", inventoryRoute);
+// File Not Found Route - must be last route in list. Unit 3, Basic Error Handling activity
+app.use(async (req, res, next) => {
+  next({status: 404, message: 'Sorry, You broke it  and the pieces are lost!'})
+})
 
-app.listen(5502, () => {
-  console.log('Server started on port 5502');
-});
-  
+/* ***********************
+* Express Error Handler
+* Place after all other middleware
+*************************/
+app.use(async (err, req, res, next) => {
+  let nav = await utilities.getNav()
+  console.error(`Error at: "${req.originalUrl}": ${err.message}`)
+  if(err.status == 404){ message = err.message} else {message = 'Oh no! There was a crash. Maybe try a different route?'}
+  res.render("errors/error", {
+    title: err.status || 'Server Error',
+    message,
+    nav
+  })
+})
 
 /* ***********************
  * Local Server Information

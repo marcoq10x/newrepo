@@ -277,6 +277,36 @@ footer .copyright{
   left: 10px;
 }
 
+
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+/* Error Page */
+
+.error-title {
+  color: #ff0000; /* Red color for error titles */
+  text-align: center;
+  margin-top: 20px;
+}
+
+.error-message {
+  color: #000; /* Black color for error messages */
+  font-size: 1.2em;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.error-description {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.error-image {
+  display: block;
+  margin: 20px auto;
+  max-width: 100%;
+  height: auto;
+}
+
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
 /* Media Query*/
 @media (max-width: 768px) {
 
