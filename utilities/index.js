@@ -63,20 +63,39 @@ Util.buildClassificationGrid = async function(data){
 }
 
 /* **************************************
-* Build the classification view HTML
+ * Build the single view HTML
  * ************************************ */
-Util.vehicledetailGrid = async function(data){
-  const datastring = JSON.stringify(data)
-  let grid
-  if(datastring.length > 0){
+Util.vehicledetailGrid = async function(data) {
+  let grid = ''
+  if (data) {
     const vehicle = data
-grid='<div>' + vehicle.inv_make + '</div>'
 
+    // Format price and mileage with commas
+    const formattedPrice = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(vehicle.inv_price)
+    const formattedMiles = new Intl.NumberFormat('en-US').format(vehicle.inv_miles)
 
-
+    grid = '<div class="vehicle-detail">'
+    // grid += '<h1>' + vehicle.inv_make + ' ' + vehicle.inv_model + '</h1>'
+    grid += '<div class="vehicle-detail-content">'
+    grid += '<div class="vehicle-image">'
+    grid += '<img src="' + vehicle.inv_image + '" alt="Image of ' + vehicle.inv_make + ' ' + vehicle.inv_model + '">'
+    grid += '</div>'
+    grid += '<div class="vehicle-info">'
+    grid += '<p><strong>Make:</strong> ' + vehicle.inv_make + '</p>'
+    grid += '<p><strong>Model:</strong> ' + vehicle.inv_model + '</p>'
+    grid += '<p><strong>Year:</strong> ' + vehicle.inv_year + '</p>'
+    grid += '<p><strong>Price:</strong> ' + formattedPrice + '</p>'
+    grid += '<p><strong>Miles:</strong> ' + formattedMiles + '</p>'
+    grid += '<p><strong>Color:</strong> ' + vehicle.inv_color + '</p>'
+    grid += '<p><strong>Description:</strong> ' + vehicle.inv_description + '</p>'
+    grid += '</div>'
+    grid += '</div>'
+    grid += '</div>'
+  } else {
+    grid += '<p class="notice">Sorry, no vehicle details found.</p>'
   }
   return grid
-  }
+}
 
 
 /* ****************************************

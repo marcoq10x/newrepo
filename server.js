@@ -16,7 +16,7 @@ const inventoryRoute  = require("./routes/inventoryRoute")
 const baseController = require("./controllers/baseController")
 
 // Add the utilities require statement here
-const utilities = require("./utilities")
+const utilities = require("./utilities/")
 
 /* ***********************
  * View Engine and Templates
@@ -29,7 +29,7 @@ app.set("layout", "./layouts/layout") // not at views root
  * Routes
  *************************/
 app.use(static)
-//Index route-Unit 3, activity
+// Index route week 3, activity
 app.get("/", utilities.handleErrors(baseController.buildHome))
 //Inventory Routes - Unit 3, activity
 app.use("/inv", inventoryRoute)

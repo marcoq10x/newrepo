@@ -12,7 +12,7 @@ invCont.buildByClassificationId = async function (req, res, next) {
     console.log("This is classification data", data)
     const grid = await utilities.buildClassificationGrid(data)
     let nav = await utilities.getNav()
-    const className = data.classification_name
+    const className = data[0].classification_name
     res.render("./inventory/classification", {
       title: className + " vehicles",
       nav,
@@ -34,7 +34,7 @@ invCont.getInventoryItemDetail = async function (req, res, next) {
       let nav = await utilities.getNav()
       if (vehicleData) {
          res.render('inventory/detail', { 
-          title:" vehicles",
+          title: vehicleData.inv_make + " " + vehicleData.inv_model,
           nav,
           grid
         }) 
@@ -46,5 +46,15 @@ invCont.getInventoryItemDetail = async function (req, res, next) {
   }
 }
 
+/* ***************************
+ *  Cause an intentional error
+ * ************************** */
+invCont.causeError = async function (req, res, next) {
+  try {
+    throw new Error("This is an intentional error.") // MQ3 intentional error
+  } catch (error) {
+    next(error)
+  }
+}
 
   module.exports = invCont
