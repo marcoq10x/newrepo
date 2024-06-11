@@ -43,6 +43,12 @@ app.use(function(req, res, next){
   next()
 })
 
+// Middleware for parsing application/json, week 4
+app.use(express.json());
+// Middleware for parsing application/x-www-form-urlencoded, week 4
+app.use(express.urlencoded({ extended: true }));
+
+
 /* ***********************
  * View Engine and Templates
  *************************/

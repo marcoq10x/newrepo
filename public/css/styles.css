@@ -549,6 +549,21 @@ a {
   font-size: 1em;
   cursor: pointer;
 }
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+/* Client-side form validation*/
+
+/* MQ4 styles for valid and invalid inputs */
+input:required:invalid, input:focus:invalid {
+  border: 2px solid red;
+}
+
+input:required:valid {
+  border: 2px solid green;
+}
+
+span {
+  color: white;
+}
 
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
 /* Media Query*/
