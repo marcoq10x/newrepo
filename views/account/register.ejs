@@ -10,17 +10,24 @@
 <body>
 <h1><%= title %></h1>
 <%- messages() %>
+<% if (errors) { %>
+  <ul class="notice">
+ <% errors.array().forEach(error => { %>
+   <li><%= error.msg %></li>
+<%  }) %>
+ </ul>
+<% } %>
 <main class="register-container"><!-- MQ4 Centering registration form -->
     <section class="register-section">
         <form action="/account/register" method="POST"><!-- MQ4 POST method for registration -->
             <label for="account_firstname">First Name:</label><!-- MQ4 required attribute -->
-            <input type="text" id="account_firstname" name="account_firstname" required>
+            <input type="text" name="account_firstname" id="accountFirstname" required value="<%= locals.account_firstname %>">
 
             <label for="account_lastname">Last Name:</label><!-- MQ4 required attribute -->
-            <input type="text" id="account_lastname" name="account_lastname" required>
+            <input type="text" id="account_lastname" name="account_lastname" required value="<%= locals.account_lastname %>">
 
             <label for="account_email">Email:</label><!-- MQ4 required attribute -->
-            <input type="email" id="account_email" name="account_email" required>
+            <input type="email" id="account_email" name="account_email" required value="<%= locals.account_email %>">
 
             <label for="account_password">Password:</label><!-- MQ4 pattern and required attributes -->
             <span>Passwords must be at least 12 characters and contain at least 1 number, 1 capital letter and 1 special character</span>
