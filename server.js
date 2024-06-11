@@ -11,12 +11,37 @@ const env = require("dotenv").config()
 const app = express()
 const static = require("./routes/static")
 const inventoryRoute  = require("./routes/inventoryRoute")
+const session = require("express-session")//Week 4
+const pool = require('./database/')//Week 4
+const accountRoute = require("./routes/accountRoute")//Week 4
 
 //Module 2
 const baseController = require("./controllers/baseController")
 
 // Add the utilities require statement here
 const utilities = require("./utilities/")
+
+/* ***********************
+ * Middleware (week4)
+ * ************************/
+app.use(session({
+  store: new (require('connect-pg-simple')(session))({
+    createTableIfMissing: true,
+    pool,
+  }),
+  secret: process.env.SESSION_SECRET,
+  resave: true,
+  saveUninitialized: true,
+  name: 'sessionId',
+}))
+
+
+// Express Messages Middleware (week 4)
+app.use(require('connect-flash')())
+app.use(function(req, res, next){
+  res.locals.messages = require('express-messages')(req, res)
+  next()
+})
 
 /* ***********************
  * View Engine and Templates
@@ -33,7 +58,8 @@ app.use(static)
 app.get("/", utilities.handleErrors(baseController.buildHome))
 //Inventory Routes - Unit 3, activity
 app.use("/inv", inventoryRoute)
-
+// Account routes - unit 4, activity
+app.use("/account", require("./routes/accountRoute"))
 
 // File Not Found Route - must be last route in list. Unit 3, Basic Error Handling activity
 app.use(async (req, res, next) => {

@@ -40,6 +40,13 @@ h1 {
   font-size: 2rem;
 }
 
+
+/*flash message week 4*/
+ ul.notice li {
+  color: #af1212;
+  margin-right: 750px;
+}
+
 div.car-info p, li {
   color:#2BB5D5;
 }
@@ -424,6 +431,69 @@ a {
   margin-top: 20px;
 }
 
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+/*Login view*/
+/* MQ4 Centering the login form */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-section {
+  background-color: #2b3a67;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+}
+
+.login-section h1 {
+  color: #ffffff;
+}
+
+.login-section form label {
+  color: #ffffff;
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  text-align: left;
+}
+
+.login-section form input[type="email"],
+.login-section form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+.login-section form button[type="submit"] {
+  background-color: #f0f0f0;
+  color: #2b3a67;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.login-section p {
+  margin-top: 20px;
+  color: #ffffff;
+}
+
+.login-section p a {
+  color: #a0c4ff;
+  text-decoration: none;
+}
+
+.login-section p a:hover {
+  text-decoration: underline;
+}
 
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
 /* Media Query*/
@@ -524,6 +594,13 @@ a {
       margin-top: 7px;
     }
 
+
+    /*flash message week 4*/
+ ul.notice li {
+  color: #af1212;
+  margin-right: 160px;
+}
+
 /*∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞∞*/
 /* Classification and Single views*/
     .vehicle-detail-content {
@@ -544,6 +621,9 @@ a {
     }
 
 }
+
+
+
 
 
 
