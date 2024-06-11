@@ -495,6 +495,61 @@ a {
   text-decoration: underline;
 }
 
+
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+/* Register view */
+
+/* styles.css */
+
+/* MQ4 Centering the registration form */
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.register-section {
+  background-color: #2b3a67;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+}
+
+.register-section h1 {
+  color: #ffffff;
+}
+
+.register-section form label {
+  color: #ffffff;
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  text-align: left;
+}
+
+.register-section form input[type="text"],
+.register-section form input[type="email"],
+.register-section form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+.register-section form button[type="submit"] {
+  background-color: #f0f0f0;
+  color: #2b3a67;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
 /*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
 /* Media Query*/
 @media (max-width: 768px) {

@@ -1,5 +1,4 @@
-<!-- views/account/login.ejs -->
-
+<!-- views/account/register.ejs -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,20 +8,25 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <main class="login-container"><!-- MQ4 Centering login form -->
-        <section class="login-section">
+    <main class="register-container"><!-- MQ4 Centering registration form -->
+        <section class="register-section">
             <h1><%= title %></h1>
             <%- messages() %>
-            <form action="/account/login" method="POST">
+            <form action="/account/register" method="POST">
+                <label for="account_first_name">First Name:</label>
+                <input type="text" id="account_first_name" name="account_first_name" required>
+
+                <label for="account_last_name">Last Name:</label>
+                <input type="text" id="account_last_name" name="account_last_name" required>
+
                 <label for="account_email">Email:</label>
                 <input type="email" id="account_email" name="account_email" required>
-                
+
                 <label for="account_password">Password:</label>
                 <input type="password" id="account_password" name="account_password" required>
-                
-                <button type="submit">Login</button>
+
+                <button type="submit">Register</button>
             </form>
-            <p>No account? <a href="/account/register">Sign-up</a><!-- MQ4 Link to registration view --></p>
         </section>
     </main>
 </body>
